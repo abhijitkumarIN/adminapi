@@ -20,7 +20,7 @@ class NotificationAPI(APIView):
         qs = Notification.objects.all().order_by("id")
         serializer = NotificationSerializer(
             qs, many=True, context={"request": request})
-        print(self.request.query_params.get("limit"))
+        print(self.request.query_params.get("page"))
         # sendMail("saved message ", "you data has been saved ",
         #          "lenwoper@gmail.com", "abhijeetkumarlucknow@gmail.com")
         return Response(serializer.data)
