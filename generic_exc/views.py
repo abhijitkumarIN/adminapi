@@ -10,12 +10,12 @@ ListAPIView , RetrieveAPIView , UpdateAPIView ,DestroyAPIView
 class RetrieveUpdateDestroySchoolList(RetrieveUpdateDestroyAPIView):
     queryset = School.objects.all()
     serializer_class = SchoolSerializer
+    pagination_class=CustomPagination
 
 
 class ListCreateSchoolList(ListCreateAPIView):
     queryset = School.objects.all()
     serializer_class = SchoolSerializer
-    # pagination_class = SmallSetPagination
     pagination_class=CustomPagination
 
 
