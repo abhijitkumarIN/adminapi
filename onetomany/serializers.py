@@ -11,14 +11,13 @@ class EmployeeSerializer(serializers.ModelSerializer):
 
 
 class CompanySerializer(serializers.ModelSerializer):
-    company = serializers.SerializerMethodField('companyemployee')
-    def companyemployee(self, obj):
-        if Employee.objects.all().exists():
-            qs = Employee.objects.all(),
-            return EmployeeSerializer(qs, many=True)
-        return None
+    employee = serializers.SerializerMethodField('companyemployee')
     class Meta:
         model = Company 
-        extra_fields=('company',)
         fields =("__all__")
 
+    def companyemployee(self, obj):
+        if Employee.objects.filter(company=obj.id).exists():
+            qs = Employee.objects.filter(company=obj.id).order_by('-id')
+            return EmployeeSerializer(qs, many=True).data
+        

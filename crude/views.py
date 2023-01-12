@@ -57,3 +57,7 @@ class NotificationAPI(APIView):
         qs = Notification.objects.get(id=pk)
         qs.delete()
         return Response({"status": True, "message": "Delete successfully "}, status=status.HTTP_200_OK)
+
+
+#  practice
+

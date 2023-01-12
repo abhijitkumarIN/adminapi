@@ -2,15 +2,16 @@ from rest_framework.generics import *
 from .serializers import SchoolSerializer
 from .models import School
 from .pagination import CustomPagination
+
 '''
 from rest_framework.generics import
 ListAPIView , RetrieveAPIView , UpdateAPIView ,DestroyAPIView
-
 '''
+
 class RetrieveUpdateDestroySchoolList(RetrieveUpdateDestroyAPIView):
     queryset = School.objects.all()
     serializer_class = SchoolSerializer
-    pagination_class=CustomPagination
+    pagination_class= CustomPagination
 
 
 class ListCreateSchoolList(ListCreateAPIView):

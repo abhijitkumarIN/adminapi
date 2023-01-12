@@ -16,9 +16,9 @@ class Company(models.Model):
 
 class Employee(models.Model):
     company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True)
-    name = models.CharField(max_length=60)
-    email = models.EmailField(max_length=60, unique=True)
-    job_type = models.CharField(max_length=50)
+    name = models.CharField(max_length=60,null=True)
+    email = models.EmailField(max_length=60, unique=True, null=True)
+    job_type = models.CharField(max_length=50, null=True)
     added_date = models.DateTimeField(auto_now=True)
     active = models.BooleanField(default=True)
 
