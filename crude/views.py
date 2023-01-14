@@ -59,5 +59,5 @@ class NotificationAPI(APIView):
         return Response({"status": True, "message": "Delete successfully "}, status=status.HTTP_200_OK)
 
 
-#  practice
+
 
