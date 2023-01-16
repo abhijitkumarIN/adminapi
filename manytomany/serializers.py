@@ -9,7 +9,8 @@ class PublicationSerializer(serializers.ModelSerializer):
 
 
 class ArticlesSerilizer(serializers.ModelSerializer):
-    
     class Meta:
         model = Article ,
         fields = ("__all__")
+    
+         

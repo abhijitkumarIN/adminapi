@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'crude',
     'generic_exc',
     'apiview',
-    'dataFilteration'
+    'dataFilteration',
+    'seconetomanay'
 ]
 
 MIDDLEWARE = [

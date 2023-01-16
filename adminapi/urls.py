@@ -22,5 +22,6 @@ urlpatterns = [
     path('', include('crude.urls')),
     path('', include('generic_exc.urls')),
     path('', include('dataFilteration.urls')),
-    path('', include('manytomany.urls'))
+    path('', include('manytomany.urls')),
+     path('', include('seconetomanay.urls'))
 ]
